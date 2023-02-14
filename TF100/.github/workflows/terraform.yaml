@@ -1,0 +1,33 @@
+# .github/workflows/terraform.yaml
+
+name: 'Terraform-TF100-Deploy'
+
+on:
+  push:
+   branches:
+    - TF100
+   paths:
+    - TF100/**
+
+  pull_request:
+    branches:
+    - TF100
+    paths:
+    - TF100/**
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    name: Terraform
+    environment: TF100
+    steps:
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.1.9
+        terraform_wrapper: false
+
