@@ -1,6 +1,6 @@
 # .github/workflows/terraform.yaml
 
-name: 'Terraform-TF100-Deploy'
+name: 'TerraformDeploy'
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
   terraformPlan:
     runs-on: ubuntu-latest
     name: TerraformPlan
-    environment: TF100
+    environment: TerraformDemo
 
     steps:
     - name: Checkout
